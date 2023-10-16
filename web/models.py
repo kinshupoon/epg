@@ -24,10 +24,11 @@ class Channel(models.Model):
         ('gdtv', '广东卫视'),
         ('hks','香港卫视'),
         ('viu','viutv'),
+        ('viu6','viutv6'),
         ('chuanliu','川流TV'),
         ('mytvsuper','myTVSUPER'),
         ('gxntv','广西网络广播电视'),
-
+        ('sdtv','山东齐鲁'),
     ]
     need_get = [
         (1,'是'),
