@@ -9,17 +9,19 @@ from crawl.spiders.cabletv import get_epgs_cabletv,get_channels_cabletv
 from crawl.spiders.g4tv import get_epgs_4gtv,get_channels_4gtv
 from crawl.spiders.mod import get_epgs_mod,get_channels_mod
 from crawl.spiders.tvb import get_epgs_tvb,get_channels_tvb
-from crawl.spiders.nowtv import get_epgs_nowtv,get_channels_nowtv
+#from crawl.spiders.nowtv import get_epgs_nowtv,get_channels_nowtv
 from crawl.spiders.gdtv import get_epgs_gdtv,get_channels_gdtv
 from crawl.spiders.icable import get_epgs_icable,get_channels_icable
 from crawl.spiders.btv import get_epgs_btv,get_channels_btv
 from crawl.spiders.tvsou import get_epgs_tvsou,get_channels_tvsou
 from crawl.spiders.hks import get_epgs_hks,get_channels_hks
 from crawl.spiders.viu import get_epgs_viu,get_channels_viu
+from crawl.spiders.viu6 import get_epgs_viu6,get_channels_viu6
 from crawl.spiders.chuanliu import get_channels_chuanliu,get_epgs_chuanliu
 from crawl.spiders.mytvsuper import get_epgs_mytvsuper,get_channels_mytvsuper
 from crawl.spiders.gxntv import get_epgs_gxntv,get_channels_gxntv
 from utils.general import chuanliu_Authorization
+from crawl.spiders.sdtv import get_epgs_sdtv,get_channels_sdtv
 epg_funcs = {
                 'tvmao':get_epgs_tvmao2,
                 'tbc':get_epgs_tbc,
@@ -30,7 +32,7 @@ epg_funcs = {
                 '4gtv':get_epgs_4gtv,
                 'mod':get_epgs_mod,
                 'tvb':get_epgs_tvb,
-                'nowtv':get_epgs_nowtv,
+                'viu6':get_epgs_viu6,
                 'icable':get_epgs_icable,
                 'gdtv':get_epgs_gdtv,
                 'btv':get_epgs_btv,
@@ -39,6 +41,7 @@ epg_funcs = {
                 'chuanliu':get_epgs_chuanliu,
                 'mytvsuper':get_epgs_mytvsuper,
                 'gxntv':get_epgs_gxntv,
+                'sdtv':get_epgs_sdtv,
             }  #所有EPG的接口
 epg_source = {
                 'tvmao':get_channels_tvmao,
@@ -50,7 +53,7 @@ epg_source = {
                 '4gtv':get_channels_4gtv,
                 'mod':get_channels_mod,
                 'tvb':get_channels_tvb,
-                'nowtv':get_channels_nowtv,
+                'viu6':get_channels_viu6,
                 'icable':get_channels_icable,
                 'gdtv':get_channels_gdtv,
                 'btv':get_channels_btv,
@@ -59,6 +62,7 @@ epg_source = {
                 'chuanliu':get_channels_chuanliu,
                 'mytvsuper':get_channels_mytvsuper,
                 'gxntv':get_channels_gxntv,
+                'sdtv':get_channels_sdtv,
         }
 func_args = {
                 'tvmao':0,
@@ -70,7 +74,7 @@ func_args = {
                 '4gtv':0,
                 'mod':0,
                 'tvb':0,
-                'nowtv':0,
+                'viu6':0,
                 'icable':0,
                 'gdtv':0,
                 'btv':0,
@@ -79,6 +83,7 @@ func_args = {
                 'chuanliu':chuanliu_Authorization,
                 'mytvsuper':0,
                 'gxntv':0,
+                'sdtv':0,
             }
 def epg_func(channel,id,dt,func_arg=0,source = 0):
     if source:
@@ -95,7 +100,7 @@ __all__ = ['get_epgs_4gtv',
            'get_epgs_gdtv',
            'get_epgs_icable',
            'get_epgs_mod',
-           'get_epgs_nowtv',
+           'get_epgs_viu6',
            'get_epgs_tbc',
            'get_epgs_tvb',
            'get_epgs_tvmao2',
@@ -105,10 +110,12 @@ __all__ = ['get_epgs_4gtv',
            'get_epgs_viu',
            'get_epgs_chuanliu',
            'get_epgs_mytvsuper',
-           'get_epgs_gxntv,
-            'epg_funcs',
+           'get_epgs_gxntv',
+           'get_epgs_sdtv',
+           'epg_funcs',
            'func_args',
            'epg_func',
+           
            ]
 
 
