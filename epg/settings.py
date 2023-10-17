@@ -120,3 +120,8 @@ STATICFILES_DIRS =[os.path.join(BASE_DIR,'static')]
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+#添加后台管理个人域名，否则不能访问web管理页面,内网地址不需要
+CSRF_TRUSTED_ORIGINS = ['https://epg.hipjs.cf']
+# 允许处理多达50000个参数
+DATA_UPLOAD_MAX_NUMBER_FIELDS = 50000
