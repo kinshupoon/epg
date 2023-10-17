@@ -28,7 +28,7 @@ def get_epgs_zhongshu(channel, channel_id, dt, func_arg):
         return ret
     for r in rs:
         try:
-            starttime = datetime.datetime.strptime('%s%02d%02d%s' % (dt.year, int(r[0]), int(r[1]), r[2]),'%Y%m%d%H:%M')
+            starttime = datetime.datetime.strptime('%s%02d%02d%s' % (dt.year, int(r[0]), int(r[1]), r[2]),'%Y%m%d%H:%M') - datetime.timedelta(hours=8)  #服务器不能设北京时区的，已减8小时
             title = r[3]  # 节目名称
             if starttime.date() < dt:
                 continue
