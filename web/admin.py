@@ -31,6 +31,8 @@ class Channel_listAdmin(admin.ModelAdmin):    #admin频道来源整理表界面�
     list_display = ('inner_channel_id','inner_name','out_channel_id','out_name','source')
     #list_per_page设置每页显示多少条记录
     list_per_page = 100
+    #ordering设置默认排序字段
+    ordering = ('-inner_channel_id','out_name',)
     list_filter =('source',) #过滤器
     list_display_links = ('inner_name','out_name')
     search_fields =('inner_name','out_name','source') #搜索字段
