@@ -10,7 +10,7 @@ def get_epgs_viu(channel, channel_id, dt, func_arg):
     success = 1
     url = 'https://api.viu.tv/production/epgs/99'
     try:
-        res = requests.get(url,headers = headers, timeout=6)
+        res = requests.get(url,headers = headers, timeout=3)
         res.encoding = 'utf-8'
         js = res.json()['epgs']
         for j in js:
