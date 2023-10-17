@@ -7,7 +7,7 @@ admin.site.index_title = "后台首页"
 class ChannelAdmin(admin.ModelAdmin):
     list_display = ('id', 'tvg_name', 'name','source','last_program_date','ineed')
     #list_per_page设置每页显示多少条记录
-    list_per_page = 50
+    list_per_page = 500
     #ordering设置默认排序字段
     ordering = ('id',)
     #设置哪些字段可以点击进入编辑界面
