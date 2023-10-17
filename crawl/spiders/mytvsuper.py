@@ -4,12 +4,12 @@ from utils.general import headers
 
 
 def get_epgs_mytvsuper(channel, channel_id, dt,
-                       func_arg):  #channel_id,dt ，每次获取当天开始共7天数据
+                       func_arg):  #channel_id,dt ，每次获取当天开始共4天数据
   epgs = []
   msg = ''
   success = 1
   start_date_str = dt.strftime('%Y%m%d')
-  end_date = dt + datetime.timedelta(days=6)
+  end_date = dt + datetime.timedelta(days=3)
   end_date_str = end_date.strftime('%Y%m%d')
   url = 'https://content-api.mytvsuper.com/v1/epg?network_code=%s&from=%s&to=%s&platform=web ' % (
       channel_id, start_date_str, end_date_str)
