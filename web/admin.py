@@ -1,7 +1,7 @@
 from django.contrib import admin
 from .models import Channel,Epg,Crawl_log,Channel_list
-admin.site.site_header = '老张的EPG--频道配置'
-admin.site.site_title = "老张的EPG"
+admin.site.site_header = '私人EPG--频道配置'
+admin.site.site_title = "私人EPG"
 admin.site.index_title = "后台首页"
 # Register your models here.
 class ChannelAdmin(admin.ModelAdmin):      #admin频道列表界面相关字段、每页显示多少条等设置
