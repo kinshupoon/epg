@@ -22,6 +22,6 @@ urlpatterns = [
     path('',web.views.index),
     path('download/<str:title>',web.views.download),
     path('api/', include('web.urls')),
-    path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls),  #此处可自定义管理界面访问域名
     path('test/',web.views.d),
 ]
