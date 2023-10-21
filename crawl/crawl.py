@@ -198,8 +198,8 @@ def gen_xml(sort):
     noepg_channel = '<channel id="9999"><display-name lang="zh">noepg</display-name></channel>'
     f.write(noepg_channel)
     for epg in epgs:
-        start = (epg.starttime.astimezone(tz=tz_sh) - datetime.timedelta(days=8)).strftime('%Y%m%d%H%M%S') + tz   #从当前日期8天前开始生成xml节目表
-        end = (epg.endtime.astimezone(tz=tz_sh) - datetime.timedelta(days=8)).strftime('%Y%m%d%H%M%S') + tz     #从当前日期8天前开始生成xml节目表
+        start = epg.starttime.astimezone(tz=tz_sh).strftime('%Y%m%d%H%M%S') + tz
+        end = epg.endtime.astimezone(tz=tz_sh).strftime('%Y%m%d%H%M%S') + tz
         id = epg.channel_id
         title = epg.title+add_info_title
         title = title.replace('&','&amp;').replace('<','&lt;').replace('>','&gt;').replace("'",'&apos;').replace('"','&quot;')
@@ -236,5 +236,3 @@ def gen_test_m3u(channels,test_dir):
             f.write(line1)
     msg = '生成%s个频道的测试m3u文件：%s'%(channels.count(),dirs['testm3u_dir'])
     return [1,msg]
-
-
