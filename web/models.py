@@ -131,11 +131,11 @@ class Epg(models.Model):
         self.crawl_dt = timezone.now()
         super().save(*args, **kwargs)
 
-    # 获取指定天数的EPG
+    # 获取指定天数的EPG，这里修改生成xml节目单的开始日期(现默认当前日期7天前）
     def get_epgs(self, channel_ids, need_program_date):
         if need_program_date > datetime.datetime.now().date():
             epgs = self.objects.filter(
-                channel_id__in=channel_ids,program_date__gte=datetime.datetime.now(),program_date__lte=need_program_date)  # ,program_date__lte=program_date,program_date__gte=datetime.datetime.now().date())
+                channel_id__in=channel_ids,program_date__gte=(datetime.datetime.now()+datetime.timedelta(days=-7)),program_date__lte=need_program_date)  # ,program_date__lte=program_date,program_date__gte=datetime.datetime.now().date())
             if epgs.count() == 0:  # 没有数据则获取当天数据
                 epgs = self.objects.filter(channel_id__in=channel_ids, program_date=datetime.datetime.now().date())
         else:
