@@ -9,8 +9,8 @@ add_info_title = '' #在节目表的描述里面添加信息
 BASE_DIR = Path(__file__).resolve().parent.parent
 root_dir = os.path.join(BASE_DIR,'download')
 crawl_info = {
-        'max_crawl_days': 4 ,    #需要采集几天节目  1为当天，2为今明两天 如果频道为多天一次获取，则不受此限制
-        'gen_xml_days': 4,   #需要生成节目表的天数 1当天 2明天  不能大于need_days,否则出错
+        'max_crawl_days': 4 ,    #需要采集几天节目  1为当天，2为今明两天 如果频道为多天一次获取，则不受此限制；如需要重采集往前的节目表，需修改crawl文件夹下crawl.py中for d in range,rang(-1,2）代表昨天至明天。
+        'gen_xml_days': 4,   #需要生成节目表的天数 1当天 2明天  不能大于need_days,否则出错,这个天指最多生成4天后的节目表，节目表开始日期已默认设为当前日期前7天
         'del_days' : 14 ,     #删除多少天之前的节目
         'recrawl_days' : 1 ,  #需要重新采集几天的节目，1为只重新采集当天节目
         'retry_crawl_times' : 2 ,        #如果采集出错，重试次数 1为不重试，2为重试一次 3....重试两次
