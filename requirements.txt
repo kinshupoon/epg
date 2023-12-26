@@ -1,7 +1,7 @@
 apscheduler
 beautifulsoup4
 bs4
-Django
+Django==4.2.6
 pip
 python-dateutil
 requests
