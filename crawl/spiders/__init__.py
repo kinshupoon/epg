@@ -4,6 +4,7 @@
 from crawl.spiders.cctv import get_epgs_cctv,get_channels_cctv
 from crawl.spiders.tbc import get_epgs_tbc,get_channels_tbc
 from crawl.spiders.tvmao import get_epgs_tvmao2,get_channels_tvmao
+from crawl.spiders.baidutvmao import get_epgs_baidutvmao,get_channels_baidutvmao
 from crawl.spiders.zhongshu import get_epgs_zhongshu,get_channels_zhongshu
 from crawl.spiders.cabletv import get_epgs_cabletv,get_channels_cabletv
 from crawl.spiders.g4tv import get_epgs_4gtv,get_channels_4gtv
@@ -24,6 +25,7 @@ from utils.general import chuanliu_Authorization
 from crawl.spiders.sdtv import get_epgs_sdtv,get_channels_sdtv
 epg_funcs = {
                 'tvmao':get_epgs_tvmao2,
+                'baidutvmao':get_epgs_baidutvmao,
                 'tbc':get_epgs_tbc,
                 'cctv':get_epgs_cctv,
                 'zhongshu':get_epgs_zhongshu,
@@ -45,6 +47,7 @@ epg_funcs = {
             }  #所有EPG的接口
 epg_source = {
                 'tvmao':get_channels_tvmao,
+                'baidutvmao':get_channels_baidutvmao,
                 'tbc':get_channels_tbc,
                 'cctv':get_channels_cctv,
                 'zhongshu':get_channels_zhongshu,
@@ -66,6 +69,7 @@ epg_source = {
         }
 func_args = {
                 'tvmao':0,
+                'baidutvmao':0,
                 'tbc':0,
                 'cctv':0,
                 'zhongshu':0,
@@ -104,6 +108,7 @@ __all__ = ['get_epgs_4gtv',
            'get_epgs_tbc',
            'get_epgs_tvb',
            'get_epgs_tvmao2',
+           'get_epgs_baidutvmao',
            'get_epgs_zhongshu',
            'get_epgs_tvsou',
            'get_epgs_hks',
@@ -117,8 +122,3 @@ __all__ = ['get_epgs_4gtv',
            'epg_func',
            
            ]
-
-
-
-
-
