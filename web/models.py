@@ -18,7 +18,7 @@ class Channel(models.Model):
         ('cabletv','香港有线宽频caletv'),
         ('g4tv','台湾四季电视'),
         ('icable','香港有线宽频i-cable'),
-        ('nowtv','香港NOWTV'),
+        #('nowtv','香港NOWTV'),
         ('tvb','香港无线电视TVB'),
         ('smg','上海广播电视'),
         ('btv', '北京卫视'),
@@ -191,7 +191,7 @@ class Epg(models.Model):
         for epg in ret['epgs']:
             try:
                 n+=1
-                if ret['source'] in ['mod', 'cabletv', 'tbc', 'g4tv', 'icable', 'nowtv', 'tvb','viu','viu6','mytvsuper']:  # 对繁体的转简体中文
+                if ret['source'] in ['mod', 'cabletv', 'tbc', 'g4tv', 'icable', 'tvb','viu','viu6','mytvsuper']:  # 对繁体的转简体中文
                     epg['title'] = cht_to_chs(epg['title'])
                     descr = cht_to_chs(epg['desc']) if 'desc' in epg else ''
                 else:
