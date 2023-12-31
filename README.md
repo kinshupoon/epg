@@ -85,7 +85,8 @@ DATABASES = {
 #### 增加抓取来源  
 1、`crawl/spider`在此文件夹中复制当前存在的采集程序，对其进行修改，主要设置两个方法get_epgs_xxx，get_channels_xxx ;
 2、`crawl/spider/__init__.py` 中导入上面设置的方法，并参照其他来源加入：from ...import ... ,epg_funcs,epg_source,func_args,__all__  ;
-3、'web'此文件夹中，在models.py模块中的source_choices增加你的节目源并命名。这样admin管理频道界面才能选择
+3、'web/models.py'此文件夹中，在models.py模块中的source_choices增加你的节目源并命名。这样admin管理频道界面才能选择
+4、'web/models.py'此文件夹中，在def save_to_dbs中可以设置没有endtime的来源的取数以及是否进行繁体转简体的设置。
 
 #### 增加其他频道  
 在后台“频道列表”中增加，“频道来源网站ID:”字段使用`<来源名:id>`格式设置。
